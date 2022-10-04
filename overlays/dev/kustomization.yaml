@@ -1,11 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-images:
-- name: 926731739826.dkr.ecr.ap-northeast-1.amazonaws.com/myapp-repo
-  newName: 926731739826.dkr.ecr.ap-northeast-1.amazonaws.com/myapp-repo
-  newTag: aa68ef2e
 resources:
-- ../../base
-patchesStrategicMerge:
-- myapp-deployment-patch.yaml
-- myapp-service-patch.yaml
+  - myapp-deployment.yaml
+  - myapp-service.yaml
